@@ -19,7 +19,8 @@ router.post("/new-message", async (req, res) => {
 router.get("/messages", async (req, res) => {
     try {
         const messages = await Message.find({});
-        res.send(messages);
+        if (messages) res.send(messages);
+        else res.send([]);
     } catch (err) {
         console.log(err);
     }
