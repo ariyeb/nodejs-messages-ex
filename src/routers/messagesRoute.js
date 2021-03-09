@@ -26,4 +26,8 @@ router.get("/messages", async (req, res) => {
     }
 });
 
+router.get("/", (req, res) => {
+    res.send("ok");
+});
+
 module.exports = router;
